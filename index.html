@@ -12,54 +12,75 @@
 </head>
 <body>
 <h1>Remember — Privacy policy</h1>
-<p class="muted">Effective October 31, 2026. Operated by Faith-Coded Technologies.</p>
+<p class="muted">Effective November 2, 2026. Operated by Brian Di Bassinga.</p>
 
-<p>Remember is a voice-first journal. What you write is yours. This page says exactly where it goes.</p>
+<p>Remember is a private journal. You speak or type an entry, and Remember helps you look back over it and see how it connects to what you wrote before and to Scripture. What you write is yours. This page says exactly where it goes.</p>
 
 <h2>Only on your phone</h2>
 <ul>
-  <li>Turning your voice into text. Speech recognition runs on your iPhone.</li>
-  <li>Your search index, and your Explore conversations. The phone finds the passages; a question you ask in Explore leaves the phone only as described below.</li>
-  <li>Protected local drafts, local indexes and cached journal material. Photographed-page import is available only in builds where that feature has passed its separate privacy and recovery checks.</li>
+  <li><strong>Turning your voice into text.</strong> Speech recognition runs on your iPhone. Recording, transcribing, checking your lines and saving all work offline.</li>
+  <li><strong>Search.</strong> Your journal's search index and the passages Remember finds for you stay on the phone. The phone finds the candidates, and only the ones described below leave it.</li>
+  <li><strong>Drafts and caches.</strong> Unsaved drafts, local indexes and cached journal material are kept in your phone's protected storage, separately for each account.</li>
+  <li><strong>Photographed pages.</strong> Reading a photographed journal page is not available in this release.</li>
 </ul>
 
 <h2>Sent to the Remember server</h2>
-<p>To sync your journal, the app sends saved entries to a server run by the developer: their text, lines, recordings (unless you turn off <em>Keep original audio</em>), and any generated takeaways and index cards.</p>
+<p>To keep your journal safe and in sync, the app sends each saved entry to a server run by the developer: its text, its lines, the recording (unless you turn off <em>Keep original audio</em>) and the takeaways, index cards, themes and connections made for it.</p>
 <ul>
-  <li>Journal text, recordings and other protected content fields are encrypted at rest with a key kept apart from the data. Operational metadata such as record identifiers and counts is not all encrypted. This is server-side encryption: the running service can decrypt protected content.</li>
-  <li>The running server can read your entries, in order to sync them and to send them to an AI model as described below.</li>
-  <li>The server is backed up encrypted. The current backup process keeps the newest 30 files; that file count alone does not establish how many days an older copy remains. Restored backups must apply later account erasures before data can be served again.</li>
-  <li>For the public launch you can sign in with Apple or Google through Supabase Auth. Supabase handles identity and session processing, including the provider email or Apple private relay address used for authentication. The journal, audio, AI operations and product measurement remain on the existing Fly.io service. Provider credentials are kept in the iOS Keychain. Older beta invitation accounts have a separate verified recovery path.</li>
-  <li>Remember does not use an email address or matching name alone as proof of ownership of an older journal. Supabase may link verified Apple and Google identities to the same managed account under its identity rules. Disconnected local entries are imported into a signed-in account only after an explicit preview and confirmation.</li>
-  <li>When you sign in, you can tell us your first name, an email address for beta feedback, how you journal now, and what you hope Remember helps with. Every answer is optional, encrypted like your entries, and seen only by the developer.</li>
+  <li><strong>Where it lives.</strong> The server runs on Fly.io in the United States.</li>
+  <li><strong>Encryption.</strong> Journal text, recordings and other content fields are encrypted at rest, with a key kept apart from the data. Some operational details, such as record identifiers, dates and counts, are not encrypted. This is server-side encryption: the running service can read your entries, so that it can sync them and, with your permission, send them to an AI model as described below.</li>
+  <li><strong>Backups.</strong> The server is backed up nightly to the developer's own storage. Content fields stay encrypted in those copies. The newest 30 backups are kept, and older ones are deleted.</li>
+  <li><strong>Signing in.</strong> You sign in with Apple or Google through Supabase Auth, which handles identity and sessions, including the email address or Apple private relay address the provider shares. A small number of accounts created by the developer, such as the account given to App Review, sign in with an email address and password through the same service. Anyone can create an account with Apple or Google. Nobody can create an email-and-password account from the app. Sign-in credentials are kept in the iOS Keychain. Your journal, recordings and AI processing stay on the Remember server, not with Supabase.</li>
+  <li><strong>Ownership.</strong> Remember never treats a matching email address or name as proof that an older journal is yours. Entries already on your phone are added to a signed-in account only after you preview and confirm them.</li>
+  <li><strong>Optional answers.</strong> When you sign in for the first time, you can tell us your first name, an email address for feedback, how you journal now and what you hope Remember helps with. Every answer is optional, encrypted like your entries, and seen only by the developer.</li>
 </ul>
 
-<h2>Sent to an AI model</h2>
-<p>For new provider accounts, a separate AI-processing choice explains and asks permission before saved entry text and selected earlier passages are sent to an AI service for takeaways, index cards, connections or requested recaps. When you ask a question in Explore, the question, your last few questions in that conversation and the passages your phone found go to the AI service to write an answer from your own entries; the server does not store the question or the answer. The choice is the “Find connections with AI” switch under Settings → Account. You can decline and still capture, read and sync your journal. Analytics permission does not enable AI processing. Previously processed results may remain in your journal when you turn future processing off.</p>
-<p>AI requests go through OpenRouter. Remember uses only zero-data-retention routes, which prohibit the provider from keeping or training on what is sent. This does not remove Remember's own encrypted server copies. In builds supporting photographed-page reading, its separate disclosure covers the one-time image request before you choose Read.</p>
+<h2>Sent to an AI model, only with your permission</h2>
+<p>Some features use an AI model: takeaways, the index card for each entry, themes and Bible verses for an entry, connections between your entries, Look back summaries, and answers to questions you ask in Explore. The app asks your permission before any of them run. The choice is the “Find connections with AI” switch in Settings. If you leave it off, you can still record, write, read, search and sync your whole journal.</p>
+<p>When it's on, here is what the AI model receives:</p>
+<ul>
+  <li><strong>After you save an entry, or when you import or reconnect earlier entries:</strong> that entry's text and lines, and short passages from earlier entries your phone picked as possibly related.</li>
+  <li><strong>When you ask a question in Explore:</strong> your question, up to your last three questions in that conversation, and short passages from the entries your phone found. For a broad question, it also receives each candidate entry's date, one-line summary, tags and first 400 characters, so it can pick the ones that answer it. Remember's server does not store your questions or the answers.</li>
+  <li><strong>When you ask for a Look back summary:</strong> lines from the entries in that period.</li>
+</ul>
+<p>AI requests go from Remember's server through OpenRouter to the model provider. Remember uses only zero-data-retention routes, which forbid the provider from keeping what is sent or training on it. The results, such as takeaways, cards and connections, are stored encrypted on Remember's server as part of your journal. Turning the switch off stops new processing. Results already made can stay in your journal until you delete them or your account. AI output can be wrong, so Remember always points back to your own entries so that you can check it.</p>
 
 <h2>Optional product insights</h2>
-<p>Product measurement is off by default. If you opt in, Remember records allow-listed page names and actions, including fixed success or failure actions, coarse duration ranges, UTC day, and app version and build. A pseudonymous identifier supports returning-user and funnel counts. Pseudonymous means the identifier is not your name; it is not a promise of anonymous collection.</p>
+<p>Product measurement is off until you turn it on. If you opt in, Remember records which screens and actions you use from a fixed list: whether an action succeeded or failed, rough durations, the day (UTC), and the app version and build. A pseudonymous identifier counts returning use. It isn't your name, but it isn't anonymous either.</p>
 <ul>
-  <li>Product events exclude journal words, titles, Explore questions, notes, entry and line identifiers, photos, audio, screenshots, session replay, arbitrary URLs, names and email addresses. Safety-resource use has no account-level event trail.</li>
-  <li>A protected, bounded local queue sends consented events to the Remember server after unsaved capture has finished. It does not use an advertising identifier or a third-party analytics SDK.</li>
-  <li>The developer's private report shows opted-in page and feature use, save and recall funnels, return behavior and failures. Behavior before consent is not measured. Product activity is not used as a correctness label for personal connections.</li>
-  <li>Raw events expire after 30 days; an hourly sweep deletes them. Withdrawing permission stops collection, clears queued events and requests removal of your stored event data. Account deletion also covers this data.</li>
+  <li>These events never include your journal's words, titles, Explore questions, notes, entry identifiers, photos, audio, screenshots, screen recordings, names or email addresses. Use of the crisis resources is never recorded against your account.</li>
+  <li>Events go to Remember's own server, after any unsaved capture has finished. Remember uses no advertising identifier and no third-party analytics service.</li>
+  <li>Raw events are deleted after 30 days. Turning measurement off stops collection, clears queued events and removes your stored events. Deleting your account removes them too.</li>
 </ul>
-<p>Product measurement is separate from using your explicit connection reviews to personalize your own suggestions and from any separately consented research participation. Declining product measurement does not restrict the journal.</p>
 
-<h2>What is never collected</h2>
+<h2>Feedback you send</h2>
+<p>If you tap Send feedback after taking a screenshot, Remember opens your Mail app with a message to the developer. Nothing is sent until you press Send in Mail. The message contains what you type and your app and iOS versions, and the screenshot only if you choose to attach it.</p>
+
+<h2>What Remember never does</h2>
 <ul>
-  <li>No advertising identifiers, cross-app advertising tracking or session replay. Authentication uses its managed provider SDK; optional product insights use Remember's own service.</li>
+  <li>No advertising, no advertising identifiers, no tracking across apps or websites, and no session replay.</li>
+  <li>Your journal, and anything made from it, is never sold, shared with advertisers, or given to anyone else. Not even in summary or combined form.</li>
   <li>Server logs record counts, timings and versions, never the words of your entries.</li>
-  <li>Your journal is not sold or given to advertisers. The service and AI processing described above are the limited processing paths; sharing with another person is outside this release.</li>
+  <li>Remember does not read your entries to contact you or anyone else. It shows crisis resources in Settings and after a save, and never reports to anyone.</li>
 </ul>
 
-<h2>Deleting</h2>
-<p>Removing an entry from the journal is different from deleting an account. The public account flow provides an in-app account deletion request after identity confirmation, covering server journal data, audio, generated records, learning data and product events, with Remember access revoked. Provider cleanup may remain pending and is retried when possible. If an Apple revocation credential is unavailable, Remember still deletes its account data and gives you instructions to revoke Apple access manually; it does not report that Apple step as complete. The app explains any deliberate choice to keep a disconnected local copy. Late uploads and restored backups must not recreate the erased account.</p>
-<p>Encrypted backups made before you delete your account are not edited. Only a limited number of backups is kept (normally the newest 30), so older copies are removed over time, and Remember is built to apply account erasures to any restored backup before its data is served again. For legacy beta recovery or privacy requests, use the contact below.</p>
+<h2>Your choices and rights</h2>
+<ul>
+  <li><strong>See and export:</strong> Settings → Account lets you export your journal and its recordings at any time.</li>
+  <li><strong>Correct or remove:</strong> you can edit or delete any entry or line, and keep or dismiss any connection Remember suggests.</li>
+  <li><strong>Turn off:</strong> AI processing and product measurement each have their own switch.</li>
+  <li><strong>Delete your account:</strong> Settings → Account → Delete account. This deletes your journal on the server, your recordings, everything made from them, your learning data and your product events, and ends Remember's access to your sign-in. If Remember can't revoke your Sign in with Apple access automatically, it still deletes your data and tells you how to remove that access yourself. The app says what, if anything, stays on your phone.</li>
+  <li><strong>Backups:</strong> backups made before you delete your account aren't edited. They're deleted as newer ones replace them, and Remember applies your deletion to any restored backup before serving its data again.</li>
+  <li>For anything else, including a copy of your data or a question about it, write to the contact below.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Remember is not intended for children under 13, and does not knowingly collect information from them. If you believe a child under 13 has an account, write to us and we will delete it.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version is posted here with a new effective date.</p>
 
 <h2>Contact</h2>
-<p>Faith-Coded Technologies · <a href="mailto:admin@faithcoded.com">admin@faithcoded.com</a></p>
+<p>Brian Di Bassinga · <a href="mailto:admin@faithcoded.com">admin@faithcoded.com</a></p>
 </body>
 </html>
