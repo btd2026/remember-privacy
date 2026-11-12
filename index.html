@@ -21,7 +21,7 @@
   <li><strong>Turning your voice into text.</strong> Speech recognition runs on your iPhone. Recording, transcribing, checking your lines and saving all work offline.</li>
   <li><strong>Search.</strong> Your journal's search index and the passages Remember finds for you stay on the phone. The phone finds the candidates, and only the ones described below leave it.</li>
   <li><strong>Drafts and caches.</strong> Unsaved drafts, local indexes and cached journal material are kept in your phone's protected storage, separately for each account.</li>
-  <li><strong>Photographed pages.</strong> Reading a photographed journal page is not available in this release.</li>
+  <li><strong>Photographed pages.</strong> When you photograph or choose a page from your handwritten journal, Remember keeps an encrypted copy on this iPhone, for your account only and excluded from backups, until you save the entry or delete the import. After the corrected entry is saved, Remember deletes its copies. Photos stay in your Photos library; Remember never deletes or adds to it. The photos never become part of the entry.</li>
 </ul>
 
 <h2>Sent to the Remember server</h2>
@@ -36,12 +36,13 @@
 </ul>
 
 <h2>Sent to an AI model, only with your permission</h2>
-<p>Some features use an AI model: takeaways, the index card for each entry, themes and Bible verses for an entry, connections between your entries, Look back summaries, and, in versions of the app that show Explore, answers to questions you ask there. The app asks your permission before any of them run. The choice is the “Find connections with AI” switch in Settings. If you leave it off, you can still record, write, read, search and sync your whole journal.</p>
+<p>Some features use an AI model: takeaways, the index card for each entry, themes and Bible verses for an entry, connections between your entries, Look back summaries, reading photographed pages, and, in versions of the app that show Explore, answers to questions you ask there. The app asks your permission before any of them run. The choice is the “Find connections with AI” switch in Settings. If you leave it off, you can still record, write, read, search and sync your whole journal.</p>
 <p>When it's on, here is what the AI model receives:</p>
 <ul>
   <li><strong>After you save an entry, or when you import or reconnect earlier entries:</strong> that entry's text and lines, and short passages from earlier entries your phone picked as possibly related.</li>
   <li><strong>When you ask a question in Explore (in versions that show it):</strong> your question, up to your last three questions in that conversation, and short passages from the entries your phone found. For a broad question, it also receives each candidate entry's date, one-line summary, tags and first 400 characters, so it can pick the ones that answer it. Remember's server does not store your questions or the answers.</li>
   <li><strong>When you ask for a Look back summary:</strong> lines from the entries in that period.</li>
+  <li><strong>When you tap Read on photographed pages:</strong> the page photos, so the model can read your handwriting. They pass through Remember's server and OpenRouter to a zero-retention provider, which see them only while reading. Nothing stores the photos, and the text read from them comes back to your phone for you to check before anything is saved. Remember explains this before your first read.</li>
 </ul>
 <p>AI requests go from Remember's server through OpenRouter to the model provider. Remember uses only zero-data-retention routes, which forbid the provider from keeping what is sent or training on it. The results, such as takeaways, cards and connections, are stored encrypted on Remember's server as part of your journal. Turning the switch off stops new processing. Results already made can stay in your journal until you delete them or your account. AI output can be wrong, so Remember always points back to your own entries so that you can check it.</p>
 
